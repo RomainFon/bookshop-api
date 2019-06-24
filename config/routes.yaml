@@ -4,7 +4,7 @@ register:
     methods: POST
 
 api:
-    path: /api
+    path: /api2
     controller: App\Controller\AuthController::api
 
 login_check:

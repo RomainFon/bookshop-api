@@ -11,7 +11,14 @@ use Symfony\Component\Validator\Constraints as Assert;
  * A book.
  *
  * @ORM\Entity
- * @ApiResource
+ * @ApiResource(
+ *     attributes={"access_control"="is_granted('ROLE_USER')"},
+ *     collectionOperations={
+ *         "get",
+ *         "delete"={"access_control"="is_granted('ROLE_ADMIN')", "access_control_message"="Seul un admin peut supprimer un client."},
+ *         "post"={"access_control"="is_granted('ROLE_ADMIN')", "access_control_message"="Seul un admin peut créer un client."}
+ *     }
+ * )
  */
 class Customer
 {
@@ -84,5 +91,5 @@ class Customer
     {
         $this->carts = $carts;
     }
-    
+
 }

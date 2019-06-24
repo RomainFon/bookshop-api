@@ -27,6 +27,11 @@ class User implements UserInterface
      * @ORM\Column(name="is_active", type="boolean")
      */
     private $isActive;
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
 
     public function __construct($username)
     {
@@ -51,7 +56,15 @@ class User implements UserInterface
     }
     public function getRoles()
     {
-        return array('ROLE_USER');
+      $roles = $this->roles;
+      // guarantee every user at least has ROLE_USER
+      $roles[] = 'ROLE_USER';
+      return array_unique($roles);
+    }
+    public function setRoles(array $roles)
+    {
+        $this->roles = $roles;
+        return $this;
     }
     public function eraseCredentials()
     {
