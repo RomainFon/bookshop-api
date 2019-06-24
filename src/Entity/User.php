@@ -2,6 +2,7 @@
 namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @ORM\Table(name="users")
  * @ORM\Entity
@@ -26,6 +27,7 @@ class User implements UserInterface
      * @ORM\Column(name="is_active", type="boolean")
      */
     private $isActive;
+
     public function __construct($username)
     {
         $this->isActive = true;

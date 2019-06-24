@@ -5,3 +5,34 @@
 
 ## Update BDD (with Doctrine)
     php bin/console doctrine:schema:update --force
+
+### Create User:
+    http://localhost:8000/register
+    Body -> form_data
+      \_username & \_password
+
+### Get Token: (POST)
+    http://localhost:8000/login_check
+    Body:
+    {
+      "username": "romain",
+      "password": "mds2019"
+    }
+
+## Use Token:
+    Header:
+    Key: Authorization & Value: Bearer [token]
+
+### Create Customer: (POST)
+    http://localhost:8000/api/customers
+    Body:
+    {
+     "firstname": "Nathan",
+     "lastname": "Fontaine"
+    }
+
+### Create Cart: (POST)
+    http://localhost:8000/api/carts
+    {
+      "customer": "/api/customers/2"
+    }

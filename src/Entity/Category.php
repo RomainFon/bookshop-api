@@ -43,7 +43,7 @@ class Category
 
     public function addProduct(Product $product){
         $product->category = $this;
-        $this->producs->add($product);
+        $this->products->add($product);
     }
 
     /**
