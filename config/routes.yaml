@@ -12,8 +12,8 @@ login_check:
     methods:  [POST]
 
 validation:
-    path:     /api/cart/validation/{id}
-    controller: App\Controller\CartController::validation
+    path:     /api/product/validateCart/{id}
+    controller: App\Controller\ProductController::validateCart
 
 productByCategory:
   path:     /api/product/category/{id}

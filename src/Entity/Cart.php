@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * A book.
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\CartRepository")
  * @ApiResource
  */
 class Cart
