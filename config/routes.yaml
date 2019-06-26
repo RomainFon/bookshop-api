@@ -10,3 +10,11 @@ api:
 login_check:
     path:     /login_check
     methods:  [POST]
+
+validation:
+    path:     /api/cart/validation/{id}
+    controller: App\Controller\CartController::validation
+
+productByCategory:
+  path:     /api/product/category/{id}
+  controller: App\Controller\ProductController::category

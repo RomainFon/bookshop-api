@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * A book.
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
  * @ApiResource
  */
 class Product
@@ -29,41 +29,41 @@ class Product
      *
      * @ORM\Column(type="string")
      */
-    public $name;
+    private $name;
 
     /**
      * @var string The description of this product.
      *
      * @ORM\Column(type="string")
      */
-    public $description;
+    private $description;
 
     /**
      * @var string The price of this product.
      *
      * @ORM\Column(type="float")
      */
-    public $price;
+    private $price;
 
     /**
      * @var string The stock of this product.
      *
      * @ORM\Column(type="integer")
      */
-    public $stock;
+    private $stock;
 
     /**
      * @var string The picture of this product.
      *
      * @ORM\Column(type="string")
      */
-    public $picture;
+    private $picture;
 
     /**
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="products")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
-    public $category;
+    private $category;
 
     /**
      * @return mixed

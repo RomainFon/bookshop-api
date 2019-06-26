@@ -22,7 +22,7 @@ class Category
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    public $id;
 
     /**
      * @var string The name of this category.
@@ -34,7 +34,7 @@ class Category
     /**
      * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
      */
-    private $products;
+    public $products;
 
     public function __construct()
     {

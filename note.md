@@ -6,6 +6,13 @@
 ## Update BDD (with Doctrine)
     php bin/console doctrine:schema:update --force
 
+## Liste user
+  * Username: romain / password: mds2019 / roles: user
+  * Username: admin / password: admin / roles: admin
+
+## Infos user connected:
+    http://localhost:8000/api2
+
 ### Create User:
     http://localhost:8000/register
     Body -> form_data
